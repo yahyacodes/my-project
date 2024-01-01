@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <div className="mt-4">
-      <header className="max-w-lg mx-auto">
+      <header className="max-w-3xl mx-auto">
         <div
           className={`bg-transparent text-gray-100 text-2xl md:hidden ${
             state ? "mx-2 pb-5" : "hidden"
