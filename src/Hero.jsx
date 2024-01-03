@@ -4,20 +4,13 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { BsGithub } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import { BsTwitterX } from "react-icons/bs";
-
-const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
-];
+import Navbar from "./Navbar";
 
 const Hero = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
     <div>
-      <header className="absolute inset-x-0 top-0 z-50">
+      <Navbar />
+      {/* <header className="absolute inset-x-0 top-0 z-50">
         <nav
           className="flex items-center justify-between p-6 lg:px-8"
           aria-label="Global"
@@ -90,7 +83,7 @@ const Hero = () => {
             </div>
           </Dialog.Panel>
         </Dialog>
-      </header>
+      </header> */}
 
       <div className="relative isolate px-6 pt-14 lg:px-8">
         <div

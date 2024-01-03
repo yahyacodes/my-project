@@ -1,47 +1,104 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Dialog } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import resumePdf from "./assets/yahyacodes.resume.pdf";
+
+const navigation = [
+  { name: "About", href: "#" },
+  { name: "Portfolio", href: "#" },
+  { name: "Contact", href: "#" },
+];
 
 const Navbar = () => {
-  const [state, setState] = useState(false);
-
-  useEffect(() => {
-    document.onclick = (e) => {
-      const target = e.target;
-      if (!target.closest(".menu-btn")) setState(false);
-    };
-  }, []);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="mt-4">
-      <header className="max-w-3xl mx-auto">
-        <div
-          className={`bg-transparent text-gray-100 text-2xl md:hidden ${
-            state ? "mx-2 pb-5" : "hidden"
-          }`}
-        >
-          <h1 className="text-gray-100 text-2xl">Yahya</h1>
-        </div>
+    <div className="">
+      <header className="absolute inset-x-0 top-0 z-50 text-gray-100">
         <nav
-          className={`pb-5 md:text-sm ${
-            state
-              ? "absolute top-0 inset-x-0 bg-white shadow-lg rounded-xl border mx-2 mt-2 md:shadow-none md:border-none md:mx-0 md:mt-0 md:relative md:bg-transparent"
-              : ""
-          }`}
+          className="flex items-center justify-between p-6 lg:px-8"
+          aria-label="Global"
         >
-          <div className="bg-divBg p-4 rounded-lg gap-x-14 items-center max-w-screen-xl mx-auto px-4 md:flex md:px-8">
-            <h1 className="text-gray-100 text-xl">Yahya</h1>
-            <div
-              className={`flex-1 items-center mt-8 md:mt-0 md:flex ${
-                state ? "block" : "hidden"
-              } `}
+          <div className="flex lg:flex-1">
+            <h1 className="font-extrabold ">YB</h1>
+          </div>
+          <div className="flex lg:hidden">
+            <button
+              type="button"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
+              onClick={() => setMobileMenuOpen(true)}
             >
-              <ul className="flex-1 justify-center items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
-                <li className="text-gray-100 hover:text-gray-900">About</li>
-                <li className="text-gray-100 hover:text-gray-900">Projects</li>
-                <li className="text-gray-100 hover:text-gray-900">Contact</li>
-              </ul>
-            </div>
+              <span className="sr-only">Open main menu</span>
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+          <div className="hidden lg:flex lg:gap-x-12">
+            {navigation.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-sm font-semibold leading-6"
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a
+              href={resumePdf}
+              target="_blank"
+              className="text-sm font-semibold leading-6"
+            >
+              Resume
+              <span aria-hidden="true">&rarr;</span>
+            </a>
           </div>
         </nav>
+        <Dialog
+          as="div"
+          className="lg:hidden"
+          open={mobileMenuOpen}
+          onClose={setMobileMenuOpen}
+        >
+          <div className="fixed inset-0 z-50" />
+          <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-divBg px-6 py-6 sm:max-w-sm sm:ring-1 text-gray-100 sm:ring-gray-100/10">
+            <div className="flex items-center justify-between">
+              <h1 className="font-extrabold ">YB</h1>
+              <button
+                type="button"
+                className="-m-2.5 rounded-md p-2.5"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span className="sr-only">Close menu</span>
+                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              </button>
+            </div>
+            <div className="mt-6 flow-root">
+              <div className="-my-6 divide-y divide-gray-500/10">
+                <div className="space-y-2 py-6">
+                  {navigation.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-color"
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+                <div className="py-6">
+                  <a
+                    href={resumePdf}
+                    target="_blank"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 hover:bg-color"
+                  >
+                    Resume
+                  </a>
+                </div>
+              </div>
+            </div>
+          </Dialog.Panel>
+        </Dialog>
       </header>
     </div>
   );
