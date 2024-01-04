@@ -20,7 +20,7 @@ const Navbar = () => {
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <h1 className="font-extrabold ">YB</h1>
+            <h1 className="font-extrabold ">YD</h1>
           </div>
           <div className="flex lg:hidden">
             <button

@@ -6,7 +6,7 @@ import "./App.css";
 
 const Logos = () => {
   return (
-    <div className="py-14 mb-40">
+    <div className="py-14 mb-64">
       <div className="max-w-screen-xl mx-auto px-4 md:px-8 image-gradient">
         <Marquee direction="left" speed={100} delay={5}>
           <div className="mt-6">

@@ -2,6 +2,9 @@ import React from "react";
 import Hero from "./Hero";
 import About from "./About";
 import Logos from "./Logos";
+import Projects from "./Projects";
+import Contact from "./Contact";
+import Footer from "./Footer";
 
 const App = () => {
   return (
@@ -9,7 +12,10 @@ const App = () => {
       <div className="relative">
         <Hero />
         <Logos />
+        <Projects />
         <About />
+        <Contact />
+        <Footer />
       </div>
     </div>
   );
