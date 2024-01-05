@@ -1,3 +1,6 @@
+import React from "react";
+import Fade from "react-reveal/Fade";
+
 const Contact = () => {
   return (
     <main className="relative py-28 mt-20">
@@ -14,45 +17,47 @@ const Contact = () => {
             }}
           />
         </div>
-        <div className="max-w-lg space-y-3 sm:mx-auto sm:px-0">
-          <p className="text-white text-3xl font-semibold sm:text-4xl">
-            Contact me
-          </p>
-          <p className="text-gray-300">
-            Feel free to reach out for a collaborative journey in crafting
-            innovative and user-centric web experiences together!
-          </p>
-        </div>
-        <div className="mt-12 mx-auto px-4 p-8 bg-color text-gray-100 sm:max-w-lg sm:px-8 rounded-xl">
-          <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
-            <div>
-              <label className="font-medium">Full name</label>
-              <input
-                type="text"
-                required
-                className="w-full mt-2 px-3 py-2 bg-transparent outline-none ring-1 ring-gray-100/10 focus:ring-gray-100/10 shadow-sm rounded-lg"
-              />
-            </div>
-            <div>
-              <label className="font-medium">Email</label>
-              <input
-                type="email"
-                required
-                className="w-full mt-2 px-3 py-2 bg-transparent outline-none ring-1 ring-gray-100/10 focus:ring-gray-100/10 shadow-sm rounded-lg"
-              />
-            </div>
-            <div>
-              <label className="font-medium">Message</label>
-              <textarea
-                required
-                className="w-full mt-2 h-36 px-3 py-2 resize-none appearance-none bg-transparent outline-none ring-1 ring-gray-100/10 focus:ring-gray-100/10 shadow-sm rounded-lg"
-              ></textarea>
-            </div>
-            <button className="w-full px-4 py-2 font-medium bg-gray-800 hover:bg-gray-700 active:bg-gray-900 rounded-lg duration-150">
-              Submit
-            </button>
-          </form>
-        </div>
+        <Fade top disctance="50%">
+          <div className="max-w-lg space-y-3 sm:mx-auto sm:px-0">
+            <p className="text-white text-3xl font-semibold sm:text-4xl">
+              Contact me
+            </p>
+            <p className="text-gray-300">
+              Feel free to reach out for a collaborative journey in crafting
+              innovative and user-centric web experiences together!
+            </p>
+          </div>
+          <div className="mt-12 mx-auto px-4 p-8 bg-color text-gray-100 sm:max-w-lg sm:px-8 rounded-xl">
+            <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
+              <div>
+                <label className="font-medium">Full name</label>
+                <input
+                  type="text"
+                  required
+                  className="w-full mt-2 px-3 py-2 bg-transparent outline-none ring-1 ring-gray-100/10 focus:ring-gray-100/10 shadow-sm rounded-lg"
+                />
+              </div>
+              <div>
+                <label className="font-medium">Email</label>
+                <input
+                  type="email"
+                  required
+                  className="w-full mt-2 px-3 py-2 bg-transparent outline-none ring-1 ring-gray-100/10 focus:ring-gray-100/10 shadow-sm rounded-lg"
+                />
+              </div>
+              <div>
+                <label className="font-medium">Message</label>
+                <textarea
+                  required
+                  className="w-full mt-2 h-36 px-3 py-2 resize-none appearance-none bg-transparent outline-none ring-1 ring-gray-100/10 focus:ring-gray-100/10 shadow-sm rounded-lg"
+                ></textarea>
+              </div>
+              <button className="w-full px-4 py-2 font-medium bg-gray-800 hover:bg-gray-700 active:bg-gray-900 rounded-lg duration-150">
+                Submit
+              </button>
+            </form>
+          </div>
+        </Fade>
       </div>
     </main>
   );

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import resumePdf from "./assets/yahyacodes.resume.pdf";
+import Logo from "./assets/Yahya Dahir-01.svg";
 
 const navigation = [
   { name: "About", href: "#" },
@@ -20,7 +21,10 @@ const Navbar = () => {
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <h1 className="font-extrabold ">YD</h1>
+            <a href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only">Your Company</span>
+              <img className="h-8 w-auto fill-gray-100" src={Logo} alt="" />
+            </a>
           </div>
           <div className="flex lg:hidden">
             <button
